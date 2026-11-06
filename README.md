@@ -54,7 +54,6 @@ The main objective is to identify patterns in flight delays, understand their co
 
 ## 📂 Project Structure
 
-```text
 airline-operations-analytics/
 │
 ├── data/
@@ -62,15 +61,16 @@ airline-operations-analytics/
 │   │   ├── airlines.csv
 │   │   ├── airports.csv
 │   │   ├── flights_subset.csv
-│   │   └── flights.csv (not included)
+│   │   ├── train.csv
+│   │   └── test.csv
 │   │
 │   └── processed/
-│       └── flights_clean.csv (generated file)
+│       ├── flights_clean.csv
+│       └── passenger_satisfaction_clean.csv
 │
 ├── notebooks/
 │   ├── 01_explore.ipynb
 │   ├── 02_load_postgres.ipynb
-│   │
 │   └── sql/
 │       ├── schema.sql
 │       └── queries.sql
@@ -79,14 +79,10 @@ airline-operations-analytics/
 │   └── airline_dashboard.pbix
 │
 ├── screenshots/
-│   ├── airline_operations.png
-│   ├── flight_analysis.png
-│   └── passenger_satisfaction.png
 │
+├── README.md
 ├── requirements.txt
-├── .gitignore
-└── README.md
-```
+└── .gitignore
 
 ---
 
