@@ -99,9 +99,9 @@ Shows passenger satisfaction across different classes, age groups, and onboard s
 Analysis of a 400,000-flight sample produced the following findings:
 
 - **Delay Rate:** 21.1% of flights that arrived were delayed by 15 minutes or more.
-- **Monthly Trend:** January – 21.08%, February – 23.31%, March – 19.28%.
-- **Delay Causes:** Late aircraft contributed approximately 39% of delay minutes, airline-related delays 32%, air system 23%, and weather 5%.
-- **Cancellations:** Weather accounted for approximately 68% of cancellations.
+- **Monthly Trend:** January – 21.1%, February – 23.3%, March – 19.3%.
+- **Delay Causes:** Late aircraft contributed approximately 39.26% of delay minutes, airline-related delays 31.92%, air system 23.27%, and weather 5.44%.
+- **Cancellations:** Weather accounted for approximately 67.71% of cancellations.
 - **Airline Comparison:** Frontier recorded a 34.97% delay rate, while Southwest recorded 18.97%.
 
 ### Passenger Satisfaction
