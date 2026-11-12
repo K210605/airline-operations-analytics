@@ -1,56 +1,38 @@
 # ✈️ Airline Data Analysis & Operations Dashboard
 
-<p align="center">
-  <b>Transforming Flight Data into Actionable Business Insights</b>
-  <br>
-  An End-to-End Data Analytics Project using Python, PostgreSQL, SQL and Power BI.
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-Data%20Analysis-blue?logo=python" />
-  <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql" />
-  <img src="https://img.shields.io/badge/SQL-Analytics-orange?logo=postgresql" />
-  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi" />
-  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter" />
-</p>
-
----
+**An End-to-End Data Analytics Project using Python, SQL, PostgreSQL and Power BI.**
 
 ## 📌 About The Project
 
-The **Airline Data Analysis & Operations Dashboard** is an end-to-end data analytics project focused on understanding airline operations, flight delays, cancellation patterns, and overall operational performance.
+This project focuses on analyzing airline flight operations, delays, cancellations, airport performance, and passenger satisfaction.
 
-The project processes airline datasets using Python, stores and analyzes structured data using PostgreSQL, performs advanced analytical queries using SQL, and presents meaningful insights through interactive Power BI dashboards.
+I used Python for data cleaning and preprocessing, PostgreSQL for storing flight data, SQL for analysis, and Power BI to create interactive dashboards.
 
-The main objective is to identify patterns in flight delays, understand their contributing factors, compare airline performance, and analyze operational trends to support data-driven decision-making.
+The project contains two separate analyses:
+1. Flight Operations Analysis
+2. Passenger Satisfaction Analysis
 
-### 🎯 Project Objectives
+Both analyses use different datasets and are not joined together.
 
-- Analyze overall airline operational performance.
-- Identify airlines with higher flight delay rates.
-- Analyze airport-wise flight traffic and delay percentages.
-- Understand the major causes of flight delays.
-- Examine monthly and day-wise delay trends.
-- Analyze flight cancellation reasons.
-- Build interactive dashboards for better visualization.
+## 🎯 Project Objectives
 
----
+- Analyze flight delays and cancellation patterns.
+- Compare airline delay performance.
+- Explore airport-wise flight activity.
+- Identify major reasons for flight delays.
+- Analyze passenger satisfaction.
+- Present findings through Power BI dashboards.
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
-| Technology | Usage |
+| Technology | Purpose |
 |---|---|
 | Python | Data cleaning and preprocessing |
-| Pandas | Data manipulation and analysis |
-| NumPy | Numerical operations |
-| Jupyter Notebook | Exploratory Data Analysis |
-| PostgreSQL | Relational database management |
-| SQL | Advanced data analysis |
-| pgAdmin 4 | Database administration |
-| Power BI | Interactive dashboard development |
-| Git & GitHub | Version control and project hosting |
-
----
+| Pandas | Working with datasets |
+| PostgreSQL | Storing flight data |
+| SQL | Analyzing flight records |
+| Power BI | Creating interactive dashboards |
+| Jupyter Notebook | Running Python analysis |
 
 ## 📂 Project Structure
 
@@ -73,7 +55,6 @@ airline-operations-analytics/
 ├── notebooks/
 │   ├── 01_explore.ipynb
 │   ├── 02_load_postgres.ipynb
-│   │
 │   └── sql/
 │       ├── schema.sql
 │       └── queries.sql
@@ -91,277 +72,168 @@ airline-operations-analytics/
 └── README.md
 ```
 
----
-
 ## 📊 Dashboard Preview
 
-The Power BI report contains three dashboard pages designed to explore different aspects of airline operations.
+### 1. Airline Operations Dashboard
 
-### 1. Airline Operations & Flight Delay Analysis
+Shows flight volume, delay rates, cancellation rates, and delay-related information.
 
-Provides an overview of airline performance, flight delays, cancellation rates, and monthly delay trends.
-
-![Airline Operations Dashboard](screenshots/airline_operations.png)
+![Airline Operations](screenshots/airline_operations.png)
 
 ### 2. Flight Analysis Dashboard
 
-Explores flight operational metrics, airline performance, and delay-related patterns.
+Shows airport-wise flight activity and delay patterns.
 
-![Flight Analysis Dashboard](screenshots/flight_analysis.png)
+![Flight Analysis](screenshots/flight_analysis.png)
 
 ### 3. Passenger Satisfaction Dashboard
 
-Presents passenger satisfaction-related metrics and visual insights.
+Shows passenger satisfaction across different classes, age groups, and onboard services.
 
-![Passenger Satisfaction Dashboard](screenshots/passenger_satisfaction.png)
+![Passenger Satisfaction](screenshots/passenger_satisfaction.png)
 
----
+## 🔎 Key Insights
+
+### Flight Operations (January–March 2015)
+
+Analysis of a 400,000-flight sample produced the following findings:
+
+- **Delay Rate:** 21.1% of flights that arrived were delayed by 15 minutes or more.
+- **Monthly Trend:** January – 21.08%, February – 23.31%, March – 19.28%.
+- **Delay Causes:** Late aircraft contributed approximately 39% of delay minutes, airline-related delays 32%, air system 23%, and weather 5%.
+- **Cancellations:** Weather accounted for approximately 68% of cancellations.
+- **Airline Comparison:** Frontier recorded a 34.97% delay rate, while Southwest recorded 18.97%.
+
+### Passenger Satisfaction
+
+- Total passenger records: approximately 104K.
+- Overall satisfaction: 43.33%.
+- Satisfied passengers: approximately 45K.
+- Average passenger age: 39.38 years.
+
+**Note:** Flight operations and passenger satisfaction are based on separate datasets.
+
+## 🧹 Data Scope & Definitions
+
+- The flight analysis uses a random sample of 400,000 flights from January to March 2015.
+- A flight is considered delayed when arrival delay is 15 minutes or more.
+- Cancelled and diverted flights are excluded from the arrival delay rate calculation.
+- The 13,305 missing arrival-delay values were checked and found to belong to cancelled or diverted flights.
+- Missing arrival-delay values were kept empty instead of replacing them with zero.
+- Delay cause analysis uses delayed flights only.
+- Findings represent this sample and should not be generalized to the entire year or current airline operations.
 
 ## 🔍 SQL Analysis
 
-PostgreSQL is used to perform analytical queries and extract meaningful insights from the flight database.
+The following analyses were performed using SQL:
 
-### Key Analysis Performed
+1. Airline-wise delay analysis.
+2. Airport-wise flight analysis.
+3. Cancellation reason analysis.
+4. Monthly airline ranking.
+5. Month-over-month delay analysis.
+6. Delay cause analysis.
+7. Hour-wise delay analysis.
+8. Day-wise delay analysis.
 
-| # | Analysis | Description |
-|---|---|---|
-| 1 | Airline Performance | Airline-wise delay rates and average arrival delays |
-| 2 | Airport Analysis | Busiest origin airports and delay percentages |
-| 3 | Cancellation Analysis | Flight cancellation reasons and percentage share |
-| 4 | Monthly Airline Ranking | Ranking airlines using window functions |
-| 5 | Monthly Trend Analysis | Month-over-month delay rate comparison |
-| 6 | Delay Cause Analysis | Airline, weather, security, air system and late aircraft delays |
-| 7 | Hourly Analysis | Flight delay rates by scheduled departure hour |
-| 8 | Day-wise Analysis | Flight delay patterns across weekdays |
+SQL concepts used:
 
-### SQL Concepts Used
-
-- SELECT, WHERE and ORDER BY
-- GROUP BY and Aggregate Functions
-- INNER JOIN
-- UNION ALL
-- Common Table Expressions (CTEs)
-- Window Functions
+- SELECT and WHERE
+- GROUP BY
+- JOIN
+- Aggregate Functions
+- CTEs
 - RANK()
 - LAG()
-- Subqueries
 
-All SQL queries are available in:
+SQL files:
 
-`notebooks/sql/queries.sql`
+- `notebooks/sql/schema.sql`
+- `notebooks/sql/queries.sql`
 
-Database table definitions are available in:
+## 🚀 How to Run the Project
 
-`notebooks/sql/schema.sql`
-
----
-
-# 🚀 Getting Started – Run the Project Locally
-
-Follow the steps below to set up and execute the project on your local machine.
-
-## 1. Prerequisites
-
-Install the following software before starting:
-
-| Software | Requirement |
-|---|---|
-| Python | 3.10 or above |
-| PostgreSQL | Database server |
-| pgAdmin 4 | Database interface |
-| Jupyter Notebook | Notebook execution |
-| Power BI Desktop | Dashboard visualization |
-| Git | Repository cloning |
-
-## 2. Clone the Repository
-
-Open Command Prompt or VS Code Terminal.
-
-Execute:
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/K210605/airline-operations-analytics.git
 ```
 
-Navigate into the project directory:
-
 ```bash
 cd airline-operations-analytics
 ```
 
-## 3. Create Python Virtual Environment
-
-Create a virtual environment:
+### 2. Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate it on Windows:
+Activate on Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-Install the required Python libraries:
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 4. Dataset Setup
+### 4. Prepare Datasets
 
-The project uses three main datasets:
-
-- `airlines.csv` – Contains airline information.
-- `airports.csv` – Contains airport names and location information.
-- `flights_subset.csv` – Sample flight records for analysis.
-
-The datasets are located inside:
+Place the required CSV files inside:
 
 ```text
 data/raw/
 ```
 
-**Note:** The complete `flights.csv` dataset is not included in this repository because it exceeds GitHub's file-size limit. The processed `flights_clean.csv` is also excluded. The included sample dataset can be used for testing and learning.
+The full `flights.csv` file is not included because of its large size. Use the provided sample or download the original dataset for full-scale analysis.
 
-For full-scale analysis, place the original flight dataset inside `data/raw/` and follow the preprocessing notebook.
-
-## 5. Run Data Exploration & Preprocessing
-
-Start Jupyter Notebook:
+### 5. Run Python Notebooks
 
 ```bash
 jupyter notebook
 ```
 
-Open:
+Open and run:
 
-`notebooks/01_explore.ipynb`
+- `01_explore.ipynb`
+- `02_load_postgres.ipynb`
 
-Execute the notebook cells sequentially.
+### 6. Set Up PostgreSQL
 
-This notebook covers:
+- Create a database named `airline_ops`.
+- Execute `notebooks/sql/schema.sql`.
+- Configure your local PostgreSQL credentials in the loading notebook.
+- Run the notebook to load the flight data.
 
-- Loading airline datasets.
-- Understanding dataset structure.
-- Exploring missing values.
-- Data cleaning and preprocessing.
-- Exploratory Data Analysis.
-- Preparing processed data for further analysis.
+### 7. Run SQL Queries
 
-## 6. PostgreSQL Database Configuration
+Open `notebooks/sql/queries.sql` in pgAdmin Query Tool and execute the queries.
 
-### Step 1: Create Database
-
-Open pgAdmin 4 and create a database named:
-
-`airline_ops`
-
-Alternatively, execute:
-
-```sql
-CREATE DATABASE airline_ops;
-```
-
-### Step 2: Create Database Tables
-
-Connect to the `airline_ops` database.
+### 8. Open Power BI
 
 Open:
-
-`notebooks/sql/schema.sql`
-
-Execute the complete SQL script.
-
-It creates three tables:
-
-- airlines
-- airports
-- flights
-
-### Step 3: Load Data into PostgreSQL
-
-Open:
-
-`notebooks/02_load_postgres.ipynb`
-
-Configure the PostgreSQL connection details according to your local environment.
-
-Execute the notebook cells to load the datasets into PostgreSQL.
-
-**Important:** Ensure that the database, schema and required CSV files are available before executing the data-loading notebook.
-
-## 7. Execute SQL Queries
-
-After loading the datasets successfully:
-
-1. Open pgAdmin 4.
-2. Connect to the `airline_ops` database.
-3. Open Query Tool.
-4. Open `notebooks/sql/queries.sql`.
-5. Copy and execute the required queries.
-
-The SQL scripts generate insights related to airline performance, airport traffic, delay causes, cancellations, and operational trends.
-
-## 8. Open Power BI Dashboard
-
-Navigate to:
 
 `powerbi/airline_dashboard.pbix`
 
-Open the file using Power BI Desktop.
-
-If prompted for data source credentials:
-
-1. Configure the PostgreSQL or original data source used by the report.
-2. Update the connection details.
-3. Refresh the dataset.
-4. Navigate through the dashboard pages.
-
-The dashboard presents the analytical results through interactive visualizations, charts, filters, and performance indicators.
-
----
-
-## 📈 Key Performance Indicators
-
-The project focuses on the following operational metrics:
-
-| KPI | Description |
-|---|---|
-| Total Flights | Total number of flight records |
-| Delay Rate % | Percentage of delayed flights |
-| Cancellation Rate | Percentage of cancelled flights |
-| Average Arrival Delay | Average arrival delay in minutes |
-| Airline Delay Rate | Delay percentage by airline |
-| Airport Flight Volume | Number of flights by origin airport |
-
----
+Update the data source paths or connection details if required, then refresh the report.
 
 ## 💡 Key Learnings
 
-Through this project, I gained practical experience in:
+- Learned to clean and preprocess datasets using Python and Pandas.
+- Practiced SQL queries for analyzing flight delays and cancellations.
+- Gained experience working with PostgreSQL.
+- Created interactive dashboards using Power BI.
+- Learned to present data findings through charts and visualizations.
 
-- End-to-end data analytics workflows.
-- Data cleaning and preprocessing with Python.
-- Exploratory Data Analysis using Pandas and NumPy.
-- Relational database design using PostgreSQL.
-- Writing advanced SQL queries.
-- Applying joins and window functions.
-- Developing interactive Power BI dashboards.
-- Extracting business insights from real-world datasets.
-- Managing projects using Git and GitHub.
+## 🔮 Future Improvements
 
----
-
-## 🔮 Future Enhancements
-
-- Integrate machine learning models for flight delay prediction.
-- Add real-time flight data integration.
-- Expand airline performance comparisons.
-- Develop more advanced operational dashboards.
-
----
+- Explore flight delay prediction.
+- Add more airline performance comparisons.
+- Improve dashboard visualizations.
 
 ## 👩‍💻 Author
 
@@ -375,10 +247,4 @@ Specialization: Cybersecurity & Privacy
 
 ---
 
-<p align="center">
-  <b>⭐ If you find this project useful, don't forget to give it a star!</b>
-  <br><br>
-  Built with Python, PostgreSQL, SQL & Power BI.
-  <br>
- by Khushi Sehgal
-</p>
+⭐ If you find this project useful, feel free to explore the repository!
